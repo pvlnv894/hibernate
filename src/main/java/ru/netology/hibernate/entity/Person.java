@@ -1,20 +1,19 @@
 package ru.netology.hibernate.entity;
 
 import jakarta.persistence.*;
-import lombok.AllArgsConstructor;
-import lombok.Builder;
-import lombok.Data;
-import lombok.NoArgsConstructor;
+import lombok.*;
 
 @NoArgsConstructor
 @AllArgsConstructor
-@Data
-@Builder
+@Getter
+@Setter
 @Entity
 @Table(name = "persons")
 public class Person {
     @EmbeddedId
     private PersonId personId;
+    @Column(name = "phone_number")
     private String phoneNumber;
+    @Column(name = "city_of_living")
     private String cityOfLiving;
 }
